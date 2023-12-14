@@ -19,8 +19,10 @@ int main()
     cout << endl;
 
     // Initialising a variable, there's more than one way!
+    // BUT, using curly brackets '{}' is recommended
+    // (as it prevents, what are known as, narrowing conversions). 
     string myvar = "An example of a string"; 
-    string veg{"Potato"};                    
+    string veg{"Potato"}; 
     string product = {"chair"};              
     auto colour = "purple" ; // implicitly a string
 
@@ -29,7 +31,7 @@ int main()
 
     // Initialise an integer, there's more than one way!
     int height = 198;     
-    int dist{515};     
+    int dist{515};  // Again, the recommended curly bracket initialisation
     int ticks={23};    
     auto count = 5 ; 
 
