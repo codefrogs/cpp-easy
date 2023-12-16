@@ -25,7 +25,7 @@ int main()
     {
         case 'a':
 	    cout << "You chose option A\n";
-            break;
+            break; // Don't forget these!
         case 'b':
             cout << "You chose option B\n";
             break;
@@ -35,6 +35,16 @@ int main()
 	case 'd':
 	    cout << "You chose option D\n";
             break;
+
+	// A group of hidden options!
+	// Notice there's no 'break' for the first two
+	// as we are grouping all three characters together.
+	case 'e':
+	case 'f':
+	case 'g':
+	    cout << "Please read the manual!\n";
+	    is_ok = false;
+	    break;
 
 	default: // Always have a default!
 	    cout << "Unknown option: " << key << "\n";
