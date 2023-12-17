@@ -60,11 +60,12 @@ int main()
         cout << i << ", ";
     }
 
-    // More modern loop and less error prone approach
     cout << "4: More modern loop: ";
-    vector<int> items{0, 1, 2, 3, 4}; // this just makes a list of items, we'll explain later!
-
-    for (auto i : items) // auto is just saying to the compiler, 'Work out the type yourself'.
+    int items[] = {0, 1, 2, 3, 4}; // a list of items
+    
+    // A more modern loop, and less error prone approach.
+    // Here, auto tells the compiler to work out type itself.
+    for (auto i : items) 
     {
         cout << i << " ";
     }
