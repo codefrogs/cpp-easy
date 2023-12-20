@@ -6,6 +6,7 @@
  * These are conversions to type that can't contain the original value.
  */
 #include <iostream>
+#include <gsl/gsl> // We don't use this, but just in case you uncomment the code example for 'narrow_cast'. 
 
 using std::cout;
 using std::endl;
@@ -40,14 +41,14 @@ int main()
     // Any 'narrowing' cast is a possible source of errors, and hard to debug.
     // If you get a warning, then it's time to look again at your coding.
 
-    // If you are sure you know what you are doing, cast away, but do at least
-    // find a way to check if your cast is problematic by using gsl:narrow_cast.
+    // If you are sure you know what you are doing, cast away. But his is a common source of errors.
+    // You can check if your cast is problematic by using gsl:narrow.
     // This is part of the Guidelines Support Library (GSL). 
     // We'll come back to these later! Feel free to skip for now.
+    // see: https://github.com/Microsoft/GSL
     //
-    // Example line:
-    // double mesaure = gsl::narrow_cast<double>(pressure_setting) + noise;
-    // see: https://github.com/Microsoft/GSL 
+    // Example line where we explicitly say we accept the narrowing conversion:
+    reading = gsl::narrow_cast<double>(pressure_setting) + noise; // No warning
 
     // C++98 - legacy style. Don't use this!:
     double ignore_me = double(pressure_setting) + noise; // Allowed (just!)
