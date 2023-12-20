@@ -14,6 +14,7 @@
 #include <stdexcept> // We need this for exceptions
 
 using std::cout;
+using std::cerr;
 using std::endl;
 using std::string;
 
@@ -61,7 +62,7 @@ int main()
     }
     catch ( std::out_of_range &e ) // catches are ignored if there's no exception.
     {
-        cout << "Error: " << e.what() << endl;
+        cerr << "Error: " << e.what() << endl; // cerr is used to specifically output error messages.
 	// we can do whatever we feel is necessary here.
 	// Perhaps we send a termination message and
 	// only then exit. Alternatively we just report an error,
