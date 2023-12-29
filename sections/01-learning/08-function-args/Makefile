@@ -1,6 +1,7 @@
+file=function-args
 
-06-function-args: 06-function-args.cpp
-	g++ --std=c++20 06-function-args.cpp -o 06-function-args
+function-args: ${file}.cpp
+	g++ --std=c++20 ${file}.cpp -o ${file}
 
 clean:
-	rm 06-function-args
+	rm ${file}
