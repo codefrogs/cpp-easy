@@ -14,10 +14,15 @@ using std::string;
 double device_read_temp(bool in_celsius)
 {
     //...Some code to interact with some external device
+    //...Which then returns a temperature in kelvin.
     //...
     double temp_kelvin{77.36}; // Nitrogen boiling point in Kelvin
 
     double temp_celsius = temp_kelvin - 273.2;
+
+    // Conditional operator
+    // The conditional expression could be a lot more complicated,
+    // but it should resolve to a true or false expression.
     return (in_celsius)? temp_celsius: temp_celsius + 32.0; 
 }
 
