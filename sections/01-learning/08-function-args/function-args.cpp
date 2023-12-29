@@ -68,10 +68,18 @@ void square_val(double &v)
     v = v*v; // modify the value of 'v'
 }
 
+// We use a const reference here.
+double square_of(const double &v)
+{
+    cout << "6: square_of(const double &v) called.\n";
+    cout << "6: v: " << v << "\n";
+    return v*v;
+}
+
 // Shows how we can return a string.
 std::string get_date()
 {
-    cout << "6: get_date() called.\n";
+    cout << "7: get_date() called.\n";
     std::time_t date_now = std::time(nullptr);
     return std::ctime(&date_now);
 }
@@ -82,7 +90,7 @@ std::string get_date()
  */
 int get_prime()
 {
-    cout << "7: get_prime called.\n";
+    cout << "8: get_prime called.\n";
     return 101;
 }
 
@@ -117,17 +125,27 @@ int main()
   square_val(val);
   cout << "5: Current value of val: " << val << "\n\n";  // Value shown to one decimal place.
 
-  // But this won't work:
+  // 6 - Pass by reference, a bit deeper
+  // This won't work:
   // square_val(2.0);
-  // There isn't a variable to reference.
+  // There isn't a variable that can be modified.
+  // 
+  // However the function square_of(const double &v) can be used
+  // with a number as it is a constant. So, we can do this:
+  square_of(3.0); // For simplicity, We are not using the return value.
+		  // But what happens here is that the compiler makes up a temporary object
+		  // that holds the value '3.0' for us.
+  
+  double result{ square_of(3.0) }; // repeating call again
+  cout << "6: Result of square: " << result << "\n\n";
 
-  // 6 - Get a string value
+  // 7 - Get a string value
   string date_now = get_date();
-  cout << "6: Date now: " << date_now << "\n" ;
+  cout << "7: Date now: " << date_now << "\n" ;
 
-  // 7 - Get prime value
+  // 8 - Get prime value
   int p = get_prime();
-  cout << "7: Favourite prime: " << p << "\n\n";
+  cout << "8: Favourite prime: " << p << "\n\n";
 
   return 0;
 }
