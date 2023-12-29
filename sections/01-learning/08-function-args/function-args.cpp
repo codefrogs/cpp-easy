@@ -61,6 +61,9 @@ void display_string(const string &s)
 /**
  * This time we have a value that is passed by reference.
  * We do this because we want to modify the value directly.
+ * Although it is better to use a function such as 'square_of'
+ * and return the result.
+ * Modifiying parameter values is harder to follow.
  */
 void square_val(double &v)
 {
