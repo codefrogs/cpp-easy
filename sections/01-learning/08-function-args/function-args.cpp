@@ -117,6 +117,10 @@ int main()
   square_val(val);
   cout << "5: Current value of val: " << val << "\n\n";  // Value shown to one decimal place.
 
+  // But this won't work:
+  // square_val(2.0);
+  // There isn't a variable to reference.
+
   // 6 - Get a string value
   string date_now = get_date();
   cout << "6: Date now: " << date_now << "\n" ;
