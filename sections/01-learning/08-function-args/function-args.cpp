@@ -71,7 +71,10 @@ void square_val(double &v)
     v = v*v; // modify the value of 'v'
 }
 
-// We use a const reference here.
+/**
+ * We use a const reference here.
+ * However, given 'double' is small, it's better to pass by value.
+ */
 double square_of(const double &v)
 {
     cout << "6: square_of(const double &v) called.\n";
@@ -106,6 +109,10 @@ void newline(){ cout << "\n" ; }
 int main()
 {
   cout << "cpp-easy by Codefrogs\n";
+  cout << "\n";
+  cout << "Useful to be aware of sizes: \n";
+  cout << "double: " << sizeof(double) << "\n";
+  cout << "int   : " << sizeof(int) << "\n";
   cout << "\n";
 
   // 1
