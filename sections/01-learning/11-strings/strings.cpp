@@ -20,11 +20,9 @@ int main()
     cout << "Surname: " << surname      << endl ;
     cout << "Full: "    << full_surname << endl ;
 
-    if (full_surname.starts_with(first))
-    {
-      cout << "Using string.starts_with()" << endl;
-      cout << "Full name starts with, " << first << endl;
-    }
+    bool found = full_surname.starts_with(first);
+    cout << "Using string.starts_with(" << first << ")" << endl;
+    cout << "Found result: " << found << endl;
 
     return 0;
 }

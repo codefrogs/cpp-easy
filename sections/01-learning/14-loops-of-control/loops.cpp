@@ -64,7 +64,7 @@ int main()
     int items[] = {0, 1, 2, 3, 4}; // a list of items
     
     // A more modern loop, and less error prone approach.
-    // Here, auto tells the compiler to work out type itself.
+    // Here, auto tells the compiler to work out the type itself.
     for (auto i : items) 
     {
         cout << i << " ";

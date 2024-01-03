@@ -34,6 +34,10 @@ int main()
     ni.pressure = 42.3;
     ni.volume = 10000.0;
     ni.mass = 102;
+    
+    // Notice that the user of the class State can change values even if
+    // it doesn't make sense physically.
+    // This is where 'classes' come into play.
 
     show_state(ni);
 

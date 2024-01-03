@@ -22,7 +22,8 @@ int main()
     cout << "\n";
 
     State a; // We can now do this with our new 'State' struct.
-    
+
+    // This now seems out of place, we can fix that in the next step.
     show_state(a);
 
   return 0;
