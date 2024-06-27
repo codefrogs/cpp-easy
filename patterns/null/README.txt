@@ -1,6 +1,3 @@
 README.txt
 
-Generate the build by typing:
-./generate.sh
-
-
+Shows a null pattern implementation.
