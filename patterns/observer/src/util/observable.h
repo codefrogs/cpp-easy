@@ -26,9 +26,9 @@ namespace Codefrogs
 		void removeObserver(Observer *observer);
 		void clear(void);
 
-		int observers();
+		int observers() const;
 
-		bool isChanged(void);
+		bool isChanged(void) const;
 
 		void notifyObservers(void);
 

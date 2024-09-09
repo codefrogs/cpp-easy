@@ -36,12 +36,12 @@ namespace Codefrogs
 		m_observers.clear();
 	}
 
-	int Observable::observers()
+	int Observable::observers() const
 	{
-		return m_observers.size();
+        return m_observers.size();
 	}
 
-	bool Observable::isChanged(void)
+	bool Observable::isChanged(void) const
 	{
 		return m_changed;
 	}
