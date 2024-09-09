@@ -1,7 +1,7 @@
 #include "oven.h"
 
 void Oven::turnOn(bool turn_on)
-{    
+{
     if (this->setOn(turn_on))
     {
         setChanged();
@@ -16,7 +16,7 @@ bool Oven::setOn(bool on)
     if (is_on != on)
     {
         is_on = on;
-        changed = true;        
+        changed = true;
     }
     return changed;
 }

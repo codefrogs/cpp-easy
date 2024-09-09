@@ -5,7 +5,7 @@
 
 class Light: public Codefrogs::Observer
 {
-    void update( Codefrogs::Observable* observable ) ;
+    void update( Codefrogs::Observable* observable ) override;
 };
 
 #endif

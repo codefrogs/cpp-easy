@@ -1,9 +1,9 @@
 /**
  * An Observable
- * 
+ *
  * An Observable is an object that other objects monitor.
  * In other words they wait to hear about changes to this class.
- * 
+ *
  * @see Observer
  */
 
@@ -13,40 +13,37 @@
 
 namespace Codefrogs
 {
-class Observer ; 
+	class Observer;
 
-class Observable
-{
-public:
-			Observable( void ) ;
-	virtual ~Observable( void ) ;
+	class Observable
+	{
+	public:
+		Observable(void);
+		virtual ~Observable(void);
 
-	void	add( Observer* const observer ) ;
+		void add(Observer *const observer);
 
-	void    removeObserver( Observer* observer ) ;
-	void	clear( void ) ;
+		void removeObserver(Observer *observer);
+		void clear(void);
 
-	int		observers() ;
+		int observers();
 
-	bool	isChanged( void ) ;
-	
+		bool isChanged(void);
 
-	void	notifyObservers( void ) ;
+		void notifyObservers(void);
 
 	protected:
-	void	setChanged( void ) ;
-	void 	clearChanged();
+		void setChanged(void);
+		void clearChanged();
 
-private:
-	
-	bool	isMember( Observer* observer ) ;
+	private:
+		bool isMember(Observer *observer);
 
-private:
+	private:
+		std::vector<Observer *> m_observers;
+		bool m_changed;
+	};
 
-	std::vector<Observer*>	m_observers ;
-	bool					m_changed ;
-};
-
-}// of Codefrogs
+} // of Codefrogs
 
 #endif // OBSERVABLE_H

@@ -4,19 +4,17 @@
 
 using namespace Codefrogs;
 
-class Oven: public Observable
+class Oven : public Observable
 {
-    public:
-    
+public:
     void turnOn(bool turn_on);
     bool isOn() const;
 
-    private:
+private:
     bool setOn(bool turn_on);
 
-    private:
+private:
     bool is_on = false;
-    
 };
 
 #endif
