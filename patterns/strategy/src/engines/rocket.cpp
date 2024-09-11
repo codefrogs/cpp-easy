@@ -1,7 +1,7 @@
 #include "rocket.h"
 #include <iostream>
 
-void Rocket::start()
+void RocketStrategy::start()
 {
     std::cout << "Rocket: started!" << std::endl;
 }

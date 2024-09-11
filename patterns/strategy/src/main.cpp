@@ -21,9 +21,9 @@ int main()
     auto aircraft3 = make_unique<Aircraft>();
 
     // Now we add different types of engine (our strategies!!!).
-    aircraft1->addEngine( make_unique<Turbofan>() );
-    aircraft2->addEngine( make_unique<Turboprop>());
-    aircraft3->addEngine( make_unique<Rocket>());
+    aircraft1->addEngine( make_unique<TurbofanStrategy>() );
+    aircraft2->addEngine( make_unique<TurbopropStrategy>());
+    aircraft3->addEngine( make_unique<RocketStrategy>());
 
     // For convenience we put them in a container.
     aircrafts.push_back(std::move(aircraft1));

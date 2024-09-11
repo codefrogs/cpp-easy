@@ -1,7 +1,7 @@
 #include "turboprop.h"
 #include <iostream>
 
-void Turboprop::start()
+void TurbopropStrategy::start()
 {
     std::cout << "Turboprop: started!" << std::endl;
 }

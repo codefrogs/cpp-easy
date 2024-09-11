@@ -3,7 +3,7 @@
 
 #include "engine_strategy.h"
 
-class Turboprop: public EngineStrategy
+class TurbopropStrategy: public EngineStrategy
 {
     public:
         virtual void start() ;

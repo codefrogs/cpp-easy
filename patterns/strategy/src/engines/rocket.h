@@ -3,7 +3,7 @@
 
 #include "engine_strategy.h"
 
-class Rocket: public EngineStrategy
+class RocketStrategy: public EngineStrategy
 {
     public:
         virtual void start() ;

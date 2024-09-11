@@ -1,7 +1,7 @@
 #include "turbofan.h"
 #include <iostream>
 
-void Turbofan::start()
+void TurbofanStrategy::start()
 {
     std::cout << "Turbofan: started!" << std::endl;
 }
