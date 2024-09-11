@@ -1,5 +1,5 @@
-#ifndef ROCKET_H
-#define ROCKET_H
+#ifndef ROCKET_STRATEGY_H
+#define ROCKET_STRATEGY_H
 
 #include "engine_strategy.h"
 
@@ -9,4 +9,4 @@ class RocketStrategy: public EngineStrategy
         virtual void start() ;
 };
 
-#endif // ROCKET_H
+#endif // ROCKET_STRATEGY_H

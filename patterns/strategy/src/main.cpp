@@ -5,7 +5,7 @@
 #include "aircraft.h"
 #include "turbofan.h"
 #include "turboprop.h"
-#include "rocket.h"
+#include "rocket_strategy.h"
 
 using std::unique_ptr;
 using std::make_unique;
