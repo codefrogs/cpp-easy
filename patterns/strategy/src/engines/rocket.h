@@ -1,9 +1,9 @@
 #ifndef ROCKET_H
 #define ROCKET_H
 
-#include "engine.h"
+#include "engine_strategy.h"
 
-class Rocket: public Engine
+class Rocket: public EngineStrategy
 {
     public:
         virtual void start() ;

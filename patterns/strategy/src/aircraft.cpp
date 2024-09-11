@@ -1,7 +1,7 @@
 #include "aircraft.h"
-#include "engine.h"
+#include "engine_strategy.h"
 
-void Aircraft::addEngine( std::unique_ptr<Engine> engine)
+void Aircraft::addEngine( std::unique_ptr<EngineStrategy> engine)
 {
     m_engine = std::move(engine);
 }

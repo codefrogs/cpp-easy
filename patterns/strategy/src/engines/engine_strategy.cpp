@@ -1,7 +1,7 @@
-#include "engine.h"
+#include "engine_strategy.h"
 #include <iostream>
 
-void Engine::start()
+void EngineStrategy::start()
 {
     std::cout<<"Engine: Default starts." << std::endl;
 }

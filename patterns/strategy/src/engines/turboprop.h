@@ -1,9 +1,9 @@
 #ifndef TURBOPROP_H
 #define TURBOPROP_H
 
-#include "engine.h"
+#include "engine_strategy.h"
 
-class Turboprop: public Engine
+class Turboprop: public EngineStrategy
 {
     public:
         virtual void start() ;

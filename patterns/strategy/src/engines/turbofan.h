@@ -1,9 +1,9 @@
 #ifndef TURBOFAN_H
 #define TURBOFAN_H
 
-#include "engine.h"
+#include "engine_strategy.h"
 
-class Turbofan: public Engine
+class Turbofan: public EngineStrategy
 {
     public:
         virtual void start() ;
