@@ -3,6 +3,7 @@
  */
 #ifndef OBSERVER_H
 #define OBSERVER_H
+#include <memory>
 
 namespace Codefrogs
 {
@@ -12,7 +13,7 @@ namespace Codefrogs
 	class Observer
 	{
 	public:
-		virtual void update(Observable *observable) = 0;
+		virtual void update(std::shared_ptr<Observable> observable) = 0;
 	};
 
 }

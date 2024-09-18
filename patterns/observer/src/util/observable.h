@@ -10,16 +10,22 @@
 #ifndef OBSERVABLE_H
 #define OBSERVABLE_H
 #include <vector>
+#include <memory>
 
 namespace Codefrogs
 {
 	class Observer;
 
-	class Observable
+	class Observable : public std::enable_shared_from_this<Observable>
 	{
 	public:
-		Observable(void);
-		virtual ~Observable(void);
+		Observable(void) = default;
+		Observable(Observable &&) = default;
+		Observable(const Observable &) = default;
+		Observable &operator=(Observable &&) = default;
+		Observable &operator=(const Observable &) = default;
+
+		virtual ~Observable(void) = default; // hence, rule of 5 applies!
 
 		void add(Observer *const observer);
 
@@ -41,7 +47,7 @@ namespace Codefrogs
 
 	private:
 		std::vector<Observer *> m_observers;
-		bool m_changed;
+		bool m_changed = false;
 	};
 
 } // of Codefrogs

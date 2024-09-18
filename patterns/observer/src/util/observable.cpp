@@ -1,4 +1,6 @@
 #include <algorithm>
+#include <memory>
+
 #include "observable.h"
 #include "observer.h"
 
@@ -8,14 +10,6 @@ using std::vector;
 
 namespace Codefrogs
 {
-
-	Observable::Observable(void) : m_changed(false)
-	{
-	}
-
-	Observable::~Observable(void)
-	{
-	}
 
 	void Observable::add(Observer *const observer)
 	{
@@ -38,7 +32,7 @@ namespace Codefrogs
 
 	int Observable::observers() const
 	{
-        return m_observers.size();
+		return m_observers.size();
 	}
 
 	bool Observable::isChanged(void) const
@@ -62,7 +56,8 @@ namespace Codefrogs
 
 		for (iter = m_observers.begin(); iter != m_observers.end(); iter++)
 		{
-			(*iter)->update(this);
+			std::shared_ptr<Observable> shared = shared_from_this();
+			(*iter)->update(shared_from_this());
 		}
 
 		clearChanged();

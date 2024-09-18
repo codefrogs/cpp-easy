@@ -1,15 +1,17 @@
 #include "light.h"
 
 #include <iostream>
+#include <memory>
 #include "oven.h"
 
 using std::cout;
 using std::endl;
 
-void Light::update(Codefrogs::Observable *observable)
+void Light::update(std::shared_ptr<Codefrogs::Observable> observable)
 {
-    Oven *oven = static_cast<Oven *>(observable); // We know there's only one observable.
-    if (oven->isOn())
+    std::shared_ptr<Oven> oven = std::static_pointer_cast<Oven>(observable); // We know there's only one observable.
+
+    if (oven->isOn()) // pull data
     {
         cout << "Light: ON" << endl;
     }
