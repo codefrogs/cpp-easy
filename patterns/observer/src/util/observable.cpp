@@ -13,7 +13,10 @@ namespace Codefrogs
 
 	void Observable::add(Observer *const observer)
 	{
-		m_observers.push_back(observer);
+		if (! isMember(observer) )
+		{
+			m_observers.push_back(observer);
+		}
 	}
 
 	void Observable::removeObserver(Observer *observer)
