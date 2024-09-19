@@ -1,5 +1,4 @@
 #include <algorithm>
-#include <memory>
 
 #include "observable.h"
 #include "observer.h"
@@ -21,7 +20,7 @@ namespace Codefrogs
 
 	void Observable::removeObserver(Observer *observer)
 	{
-		std::vector<Observer *>::iterator iter = find(m_observers.begin(), m_observers.end(), observer);
+		auto iter = find(m_observers.begin(), m_observers.end(), observer);
 		if (iter != m_observers.end())
 		{
 			m_observers.erase(iter);
@@ -53,15 +52,7 @@ namespace Codefrogs
 		if (!isChanged())
 			return;
 
-		// for_each(m_observers.begin(), m_observers.end(), [this](Observer* ob){ ob->update(this); } );
-
-		std::vector<Observer *>::iterator iter;
-
-		for (iter = m_observers.begin(); iter != m_observers.end(); iter++)
-		{
-			std::shared_ptr<Observable> shared = shared_from_this();
-			(*iter)->update(shared_from_this());
-		}
+		for_each(m_observers.begin(), m_observers.end(), [this](Observer* ob){ ob->update(this); } );
 
 		clearChanged();
 
@@ -73,18 +64,9 @@ namespace Codefrogs
 	}
 
 	bool Observable::isMember(Observer *observer)
-	{
-
-		std::vector<Observer *>::iterator iter;
-		for (iter = m_observers.begin(); iter != m_observers.end(); iter++)
-		{
-			if ((*iter) == observer)
-			{
-				return true; // already a member
-			}
-		}
-
-		return false;
+	{		
+		auto it = std::find(m_observers.begin(), m_observers.end(), observer);
+		return it != m_observers.end();
 
 	} // of isMember
 } // of Codefrogs

@@ -13,7 +13,7 @@ namespace Codefrogs
 	class Observer
 	{
 	public:
-		virtual void update(std::shared_ptr<Observable> observable) = 0;
+		virtual void update(Observable *observable) = 0;
 	};
 
 }

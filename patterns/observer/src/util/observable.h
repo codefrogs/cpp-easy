@@ -10,13 +10,12 @@
 #ifndef OBSERVABLE_H
 #define OBSERVABLE_H
 #include <vector>
-#include <memory>
 
 namespace Codefrogs
 {
 	class Observer;
 
-	class Observable : public std::enable_shared_from_this<Observable>
+	class Observable
 	{
 	public:
 		Observable(void) = default;
