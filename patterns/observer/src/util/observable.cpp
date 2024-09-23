@@ -10,7 +10,7 @@ using std::vector;
 namespace Codefrogs
 {
 
-	void Observable::add(Observer *const observer)
+	void Observable::add(Observer *const observer) noexcept
 	{
 		if (! isMember(observer) )
 		{
@@ -18,7 +18,7 @@ namespace Codefrogs
 		}
 	}
 
-	void Observable::removeObserver(Observer *observer)
+	void Observable::removeObserver(Observer *observer) noexcept
 	{
 		auto iter = find(m_observers.begin(), m_observers.end(), observer);
 		if (iter != m_observers.end())
@@ -27,22 +27,22 @@ namespace Codefrogs
 		}
 	}
 
-	void Observable::clear(void)
+	void Observable::clear(void) noexcept
 	{
 		m_observers.clear();
 	}
 
-	int Observable::observers() const
+	int Observable::observers() const noexcept
 	{
 		return m_observers.size();
 	}
 
-	bool Observable::isChanged(void) const
+	bool Observable::isChanged(void) const noexcept
 	{
 		return m_changed;
 	}
 
-	void Observable::setChanged(void)
+	void Observable::setChanged(void) noexcept
 	{
 		m_changed = true;
 	}
@@ -58,12 +58,12 @@ namespace Codefrogs
 
 	} // of notifyObservers
 
-	void Observable::clearChanged()
+	void Observable::clearChanged() noexcept
 	{
 		m_changed = false;
 	}
 
-	bool Observable::isMember(Observer *observer)
+	bool Observable::isMember(Observer *observer) noexcept
 	{		
 		auto it = std::find(m_observers.begin(), m_observers.end(), observer);
 		return it != m_observers.end();

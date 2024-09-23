@@ -1,21 +1,21 @@
 #include "light.h"
 
 #include <iostream>
-#include "oven.h"
+#include "observable.h"
+#include "switchable.h"
 
 using std::cout;
 using std::endl;
 
 void Light::update(Codefrogs::Observable *observable)
 {
-    // We have strong coupling to the oven here, so if we knew there might be other
-    // observers, we might create a interface instead.
-    // But for this simple case, we will use the concrete class.
+    // We would have strong coupling to the oven here if we didn't use the interface.
+    // i.e. if we had:
+    // Oven* oven = dynamic_cast<Oven*>(observable)
     //
-    Oven *oven = static_cast<Oven*>(observable); // We know there's only one observable.
+    Switchable *device = dynamic_cast<Switchable*>(observable);
     
-    
-    if (oven->isOn()) // pull data
+    if (device->isOn()) // pull data
     {
         cout << "Light: ON" << endl;
     }

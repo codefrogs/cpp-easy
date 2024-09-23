@@ -26,23 +26,23 @@ namespace Codefrogs
 
 		virtual ~Observable(void) = default; // hence, rule of 5 applies!
 
-		void add(Observer *const observer);
+		void add(Observer *const observer) noexcept;
 
-		void removeObserver(Observer *observer);
-		void clear(void);
+		void removeObserver(Observer *observer) noexcept;
+		void clear(void) noexcept;
 
-		int observers() const;
+		int observers() const noexcept;
 
-		bool isChanged(void) const;
+		bool isChanged(void) const noexcept;
 
 		void notifyObservers(void);
 
 	protected:
-		void setChanged(void);
-		void clearChanged();
+		void setChanged(void) noexcept;
+		void clearChanged() noexcept;
 
 	private:
-		bool isMember(Observer *observer);
+		bool isMember(Observer *observer) noexcept;
 
 	private:
 		std::vector<Observer *> m_observers;

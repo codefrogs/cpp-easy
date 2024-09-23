@@ -1,10 +1,11 @@
 #ifndef OVEN_H
 #define OVEN_H
 #include "observable.h"
+#include "switchable.h"
 
 using namespace Codefrogs;
 
-class Oven : public Observable
+class Oven : public Observable, public Switchable
 {
 public:
     void turnOn(bool turn_on);
