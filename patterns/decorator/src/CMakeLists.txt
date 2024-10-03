@@ -1,0 +1,6 @@
+message("Adding executable...")
+add_executable(decorator main.cpp aircraft.cpp)
+add_subdirectory(decorators)
+add_subdirectory(util)
+target_link_libraries(decorator PRIVATE equip_lib util_lib)
+target_include_directories(decorator PRIVATE .)
