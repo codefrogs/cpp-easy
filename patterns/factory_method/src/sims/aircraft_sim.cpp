@@ -1,8 +1,10 @@
 #include "aircraft_sim.h"
 #include <iostream>
+#include <algorithm>
 
 using std::cout;
 using std::endl;
+using std::unique_ptr;
 
 void AircraftSim::loadScenario()
 {
@@ -21,6 +23,9 @@ void AircraftSim::run(int seconds)
 
 void AircraftSim::update(double time_delta)
 {
+    auto fly_op = [time_delta](unique_ptr<IAircraft>& aircraft){ aircraft->fly(time_delta); };
+
+    std::ranges::for_each(m_aircrafts, fly_op) ;
     cout << "." ;
 };
 

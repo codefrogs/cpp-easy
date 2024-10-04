@@ -3,7 +3,8 @@
 
 class IAircraft
 {
-    virtual void fly() = 0;
+public:
+    virtual void fly(const double time_delta) = 0;
 };
 
 #endif // IAIRCRAFT_H

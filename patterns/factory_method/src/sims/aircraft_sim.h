@@ -23,7 +23,7 @@ class AircraftSim
     virtual std::unique_ptr<IAircraft> createAircraft(const std::string type) ;
 
     private:
-    std::vector<std::unique_ptr<IAircraft>> m_aircraft;
+    std::vector<std::unique_ptr<IAircraft>> m_aircrafts;
 
 };
 
