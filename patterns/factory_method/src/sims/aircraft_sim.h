@@ -3,10 +3,13 @@
 
 #include <memory>
 #include <string>
+#include <vector>
 #include "iaircraft.h"
 
 class AircraftSim
 {
+    static const inline double kOneSecond{1.0};
+
     public:
 
     void loadScenario();
@@ -18,6 +21,9 @@ class AircraftSim
     void update(double time_delta);
 
     virtual std::unique_ptr<IAircraft> createAircraft(const std::string type) ;
+
+    private:
+    std::vector<std::unique_ptr<IAircraft>> m_aircraft;
 
 };
 

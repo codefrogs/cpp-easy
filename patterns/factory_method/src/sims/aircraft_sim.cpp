@@ -12,12 +12,16 @@ void AircraftSim::loadScenario()
 void AircraftSim::run(int seconds)
 {
     cout << "Running for " << seconds << " seconds." << endl;
-    cout << "Finished!" << endl;
+    for( int i{0}; i < seconds; ++i )
+    {
+        update(kOneSecond);
+    }
+    cout << "\nFinished!" << endl;
 };
 
 void AircraftSim::update(double time_delta)
 {
-    cout << "Updating simulation by step: " << time_delta << " secs." << endl;
+    cout << "." ;
 };
 
 std::unique_ptr<IAircraft> AircraftSim::createAircraft(const std::string type) { return nullptr; };
