@@ -10,21 +10,19 @@ class AircraftSim
 {
     static const inline double kOneSecond{1.0};
 
-    public:
-
+public:
     void loadScenario();
-    
+
     void run(int seconds);
 
-    protected:
-
+protected:
     void update(double time_delta);
 
-    virtual std::unique_ptr<IAircraft> createAircraft(const std::string type) ;
+    virtual std::vector<std::string> getAircraftTypesAvailable();
+    virtual std::unique_ptr<IAircraft> createAircraft(const std::string type);
 
-    private:
+private:
     std::vector<std::unique_ptr<IAircraft>> m_aircrafts;
-
 };
 
 #endif // AIRCRAFT_SIM_H
