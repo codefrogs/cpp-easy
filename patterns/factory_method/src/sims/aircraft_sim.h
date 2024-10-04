@@ -9,15 +9,15 @@ class AircraftSim
 {
     public:
 
-    void loadScenario(){};
+    void loadScenario();
     
-    void run(int seconds){};
+    void run(int seconds);
 
     protected:
 
-    void update(double time_delta){};
+    void update(double time_delta);
 
-    virtual std::unique_ptr<IAircraft> createAircraft(const std::string type){ return nullptr; } ;
+    virtual std::unique_ptr<IAircraft> createAircraft(const std::string type) ;
 
 };
 

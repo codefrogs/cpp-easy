@@ -1,4 +1,5 @@
 message("Adding executable...")
 add_executable(factory_method main.cpp)
 add_subdirectory(sims)
+target_link_libraries(factory_method PRIVATE sims_lib)
 target_include_directories(factory_method PRIVATE .)
