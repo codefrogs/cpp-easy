@@ -1,9 +1,23 @@
 #include "aircraft_sim.h"
+#include <iostream>
 
-void AircraftSim::loadScenario() {};
+using std::cout;
+using std::endl;
 
-void AircraftSim::run(int seconds) {};
+void AircraftSim::loadScenario()
+{
+    cout << "Loading scenario..." << endl;
+};
 
-void AircraftSim::update(double time_delta) {};
+void AircraftSim::run(int seconds)
+{
+    cout << "Running for " << seconds << " seconds." << endl;
+    cout << "Finished!" << endl;
+};
+
+void AircraftSim::update(double time_delta)
+{
+    cout << "Updating simulation by step: " << time_delta << " secs." << endl;
+};
 
 std::unique_ptr<IAircraft> AircraftSim::createAircraft(const std::string type) { return nullptr; };
