@@ -7,4 +7,4 @@ add_library(civil_aircraft_sim OBJECT civil_aircraft_sim.cpp)
 target_include_directories(civil_aircraft_sim PUBLIC .)
 
 # Add dependencies
-target_link_libraries( civil_aircraft_sim PUBLIC aircraft_sims)
+target_link_libraries( civil_aircraft_sim PUBLIC aircraft_sim)
