@@ -4,6 +4,7 @@
 class IAircraft
 {
 public:
+    virtual ~IAircraft() = default;
     virtual void fly(const double time_delta) = 0;
 };
 

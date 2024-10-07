@@ -23,7 +23,7 @@ void AircraftSim::loadScenario()
 
 vector<std::string> AircraftSim::getAircraftTypesAvailable()
 {
-    return vector<string>();// { "Cessna-Skyhawk", "Airbus-A320", "Boeing-777", "Spitefire-Mk24", "Airbus-H120", "Gulfstream-G550"};
+    return vector<string>();
 }
 
 void AircraftSim::run(int seconds)
@@ -38,8 +38,7 @@ void AircraftSim::run(int seconds)
 
 void AircraftSim::update(double time_delta)
 {
-    auto fly_op = [time_delta](unique_ptr<IAircraft> &aircraft)
-    { aircraft->fly(time_delta); };
+    auto fly_op = [time_delta](unique_ptr<IAircraft> &aircraft){ aircraft->fly(time_delta); };
 
     std::ranges::for_each(m_aircrafts, fly_op);
     cout << ".";
