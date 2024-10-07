@@ -11,6 +11,7 @@ class AircraftSim
     static const inline double kOneSecond{1.0};
 
 public:
+    ~AircraftSim() = default;
     void loadScenario();
 
     void run(int seconds);
