@@ -8,7 +8,7 @@ class Boeing777 : public IAircraft
 public:
     ~Boeing777() = default;
 
-    void fly(const double time_delta);
+    void fly(const double time_delta) override;
 
 private:
     void setup();

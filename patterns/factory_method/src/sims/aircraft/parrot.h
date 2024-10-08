@@ -8,7 +8,7 @@ class Parrot : public IAircraft
 public:
     ~Parrot() = default;
 
-    void fly(const double time_delta);
+    void fly(const double time_delta) override;
 
 private:
     void setup();

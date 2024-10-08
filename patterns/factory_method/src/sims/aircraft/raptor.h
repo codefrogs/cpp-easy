@@ -8,7 +8,7 @@ class Raptor : public IAircraft
 public:
     ~Raptor() = default;
 
-    void fly(const double time_delta);
+    void fly(const double time_delta) override;
 
 private:
     void setup();

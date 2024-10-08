@@ -8,7 +8,7 @@ class Air3 : public IAircraft
 public:
     ~Air3() = default;
 
-    void fly(const double time_delta);
+    void fly(const double time_delta) override;
 
 private:
     void setup();

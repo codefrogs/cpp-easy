@@ -8,7 +8,7 @@ class CessnaSkyhawk : public IAircraft
 public:
     ~CessnaSkyhawk() = default;
 
-    void fly(const double time_delta);
+    void fly(const double time_delta) override;
 
 private:
     void setup();

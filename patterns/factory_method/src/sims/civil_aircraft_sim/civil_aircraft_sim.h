@@ -12,8 +12,8 @@ public:
     ~CivilAircraftSim() = default;
 
 protected:
-    virtual std::vector<std::string> getAircraftTypesAvailable();
-    virtual std::unique_ptr<IAircraft> createAircraft(const std::string type);
+    std::vector<std::string> getAircraftTypesAvailable() override;
+    std::unique_ptr<IAircraft> createAircraft(const std::string type) override;
 };
 
 #endif // CIVIL_AIRCRAFT_SIM_H

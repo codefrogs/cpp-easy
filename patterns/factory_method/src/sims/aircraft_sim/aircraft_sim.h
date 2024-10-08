@@ -20,6 +20,8 @@ protected:
     void update(double time_delta);
 
     virtual std::vector<std::string> getAircraftTypesAvailable();
+
+    // Factory method
     virtual std::unique_ptr<IAircraft> createAircraft(const std::string type);
 
 private:
