@@ -15,8 +15,10 @@ int main()
 {
     constexpr int kDuration{5};
     // unique_ptr<AircraftSim> sim_app = make_unique<AircraftSim>();
-    // unique_ptr<AircraftSim> sim_app = make_unique<CivilAircraftSim>();
-    unique_ptr<AircraftSim> sim_app = make_unique<DroneAircraftSim>();
+    // unique_ptr<AircraftSim> sim_app = make_unique<DroneAircraftSim>();
+    
+    unique_ptr<AircraftSim> sim_app = make_unique<CivilAircraftSim>();
+    
     sim_app->loadScenario();
     sim_app->run(kDuration);
 
