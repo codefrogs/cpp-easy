@@ -32,6 +32,12 @@ void AircraftSim::run(int seconds)
     for (int i{0}; i < seconds; ++i)
     {
         update(kOneSecond);
+
+        // This could have more updates such as:
+        // updating aircraft
+        // update weather
+        // update airports
+        // update airspace info
     }
     cout << "\nFinished!" << endl;
 };
