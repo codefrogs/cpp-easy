@@ -11,7 +11,7 @@ void CessnaSkyhawk::fly(const double time_delta)
     {
         setup();
     }
-    cout << "C";
+    else cout << "C";
 }
 
 void CessnaSkyhawk::setup()

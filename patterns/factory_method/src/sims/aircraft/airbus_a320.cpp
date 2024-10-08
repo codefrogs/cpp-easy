@@ -11,7 +11,7 @@ void AirbusA320::fly(const double time_delta)
     {
         setup();
     }
-    cout << "A";
+    else cout << "A";
 }
 
 void AirbusA320::setup()

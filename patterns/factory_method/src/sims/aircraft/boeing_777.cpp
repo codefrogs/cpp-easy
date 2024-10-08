@@ -11,7 +11,7 @@ void Boeing777::fly(const double time_delta)
     {
         setup();
     }
-    cout << "B";
+    else cout << "B";
 }
 
 void Boeing777::setup()
